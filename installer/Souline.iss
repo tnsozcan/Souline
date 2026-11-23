@@ -1,6 +1,6 @@
 ; Souline kurulum dosyasi (Inno Setup 6). Derleme: ISCC.exe installer\Souline.iss
 #define AppName "Souline"
-#define AppVersion "1.0.0"
+#define AppVersion "1.0.1"
 #define AppPublisher "TEN Works"
 #define AppExe "Souline.exe"
 
@@ -18,6 +18,7 @@ OutputDir=..\release
 OutputBaseFilename=Souline-Setup-v{#AppVersion}
 SetupIconFile=..\assets\souline.ico
 UninstallDisplayIcon={app}\{#AppExe}
+UninstallDisplayName={#AppName}
 Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern
@@ -35,7 +36,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "..\dist-release\{#AppExe}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\dist-release\Souline\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "..\LICENSE"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\THIRD_PARTY_NOTICES.md"; DestDir: "{app}"; Flags: ignoreversion
 
@@ -47,5 +48,7 @@ Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#AppExe}"; Tasks: desktopico
 Filename: "{app}\{#AppExe}"; Description: "{cm:LaunchProgram,{#AppName}}"; Flags: nowait postinstall skipifsilent
 
 [UninstallRun]
+; Tepsiden cikistan sonra kapanmakta olan bir Souline islemi dosyalari kilitlemesin
+Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM {#AppExe}"; Flags: runhidden; RunOnceId: "StopSouline"
 ; Windows ile baslat kaydini temizle
 Filename: "{sys}\reg.exe"; Parameters: "delete HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v Souline /f"; Flags: runhidden; RunOnceId: "RemoveStartup"

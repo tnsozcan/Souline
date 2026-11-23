@@ -37,7 +37,7 @@ from pyatv.support.metadata import MediaMetadata
 APP_NAME = "Souline"
 # Eski adi; ayarlar ve Windows ile baslatma kaydi buradan tasinir.
 LEGACY_APP_NAME = "AudioFerry"
-APP_VERSION = "1.0.0"
+APP_VERSION = "1.0.1"
 CURRENT_LANGUAGE = "tr" if (locale.getlocale()[0] or "").lower().startswith("tr") else "en"
 # AirPlay 2 alicilari (HomePod) baglanti kurulurken 11025-88200 kare (0,25-2 sn) gecikme
 # araligini kabul ettigini bildirir. Daha dusuk degerlerde paketler calma anina yetismez ve
@@ -126,7 +126,7 @@ UI_EN = {
     "Logu Aç": "Open Log",
     "Henüz log yok.": "No log entries yet.",
     "İlk kurulum gerekli": "First setup required",
-    "Yerel ağda uyumlu bir AirPlay alıcısı bulunamadı.": "No compatible AirPlay receiver was found on the local network.",
+    "Yerel ağda uyumlu bir AirPlay alıcısı bulunamadı. Windows Güvenlik Duvarı Souline için izin sorduysa özel ağlarda izin verdiğinden ve bilgisayarın hoparlörle aynı ağda olduğundan emin ol.": "No compatible AirPlay receiver was found on the local network. If Windows Firewall asked about Souline, make sure it is allowed on private networks and that this PC is on the same network as the speaker.",
     "AirPlay alıcısı bulundu.": "AirPlay receiver found.",
     "AirPlay alıcısı bulundu": "AirPlay receivers found",
     "Varsayılanlara dönüldü.": "Defaults restored.",
@@ -1263,7 +1263,7 @@ class TrayApp:
             try:
                 found_devices = asyncio.run(run_detect())
                 if not found_devices:
-                    raise RuntimeError(ui("Yerel ağda uyumlu bir AirPlay alıcısı bulunamadı."))
+                    raise RuntimeError(ui("Yerel ağda uyumlu bir AirPlay alıcısı bulunamadı. Windows Güvenlik Duvarı Souline için izin sorduysa özel ağlarda izin verdiğinden ve bilgisayarın hoparlörle aynı ağda olduğundan emin ol."))
                 discovered_by_label.clear()
                 for found in found_devices:
                     label = f"{found.name} — {found.address}"

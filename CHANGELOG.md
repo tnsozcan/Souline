@@ -2,6 +2,16 @@
 
 All notable changes to Souline are documented here.
 
+## [1.0.1] - 2026-11-23
+
+### Fixed
+- Uninstalling right after exiting from the tray could report that some components could not be removed. Souline is now packaged as a folder (one process instead of a self-extracting launcher), and the uninstaller stops any Souline process that is still closing.
+- Starts faster, because it no longer unpacks itself to a temporary folder on every launch.
+
+### Changed
+- Windows Settings > Apps lists the app as "Souline".
+- When no receiver is found, the message now mentions the Windows Firewall permission for private networks.
+
 ## [1.0.0] - 2026-11-23
 
 First stable release, renamed from AudioFerry.

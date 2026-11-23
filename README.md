@@ -7,7 +7,7 @@
 
 Souline is a lightweight Windows application that streams system audio to compatible AirPlay receivers, including Apple HomePod devices.
 
-> Status: v1.0.0, the first stable release. Windows-to-HomePod streaming has been verified on real hardware, including long listening sessions without dropouts at the default latency.
+> Status: v1.0.1, stable. Windows-to-HomePod streaming has been verified on real hardware, including long listening sessions without dropouts at the default latency.
 
 ### Features
 
@@ -32,7 +32,7 @@ Souline is a lightweight Windows application that streams system audio to compat
 
 ### Installation
 
-Download `Souline-Setup-v1.0.0.exe` from the latest release and run it. It installs for the current user only (no administrator rights), adds a Start menu shortcut and can be removed from Windows Settings > Apps. A portable `Souline-v1.0.0-win-x64.zip` is also provided.
+Download `Souline-Setup-v1.0.1.exe` from the latest release and run it. It installs for the current user only (no administrator rights), adds a Start menu shortcut and can be removed from Windows Settings > Apps. A portable `Souline-v1.0.1-win-x64.zip` is also provided.
 
 The binaries are not code-signed, so Microsoft Defender SmartScreen may display an unknown-publisher warning. Only continue if the SHA-256 checksum matches `SHA256SUMS.txt` from the same release. Settings from the earlier AudioFerry name are carried over automatically.
 
@@ -104,7 +104,7 @@ Copyright © 2026 TEN Works. Souline source code and releases are free for perso
 
 Souline, Windows sistem sesini HomePod dahil uyumlu AirPlay alıcılarına aktarmanızı sağlayan hafif bir masaüstü uygulamasıdır.
 
-> Durum: v1.0.0, ilk kararlı sürüm. Windows'tan HomePod'a ses aktarımı gerçek donanımda, varsayılan gecikmede uzun dinleme dahil kesintisiz test edilmiştir.
+> Durum: v1.0.1, kararlı sürüm. Windows'tan HomePod'a ses aktarımı gerçek donanımda, varsayılan gecikmede uzun dinleme dahil kesintisiz test edilmiştir.
 
 ### Özellikler
 
@@ -129,7 +129,7 @@ Souline, Windows sistem sesini HomePod dahil uyumlu AirPlay alıcılarına aktar
 
 ### Kurulum
 
-Son sürümdeki `Souline-Setup-v1.0.0.exe` dosyasını indirip çalıştırın. Yalnızca mevcut kullanıcı için kurulur (yönetici izni istemez), Başlat menüsüne kısayol ekler ve Ayarlar > Uygulamalar'dan kaldırılabilir. Kurulum istemeyenler için `Souline-v1.0.0-win-x64.zip` de vardır.
+Son sürümdeki `Souline-Setup-v1.0.1.exe` dosyasını indirip çalıştırın. Yalnızca mevcut kullanıcı için kurulur (yönetici izni istemez), Başlat menüsüne kısayol ekler ve Ayarlar > Uygulamalar'dan kaldırılabilir. Kurulum istemeyenler için `Souline-v1.0.1-win-x64.zip` de vardır.
 
 Dosyalar kod imzalı değildir; Microsoft Defender SmartScreen bilinmeyen yayıncı uyarısı gösterebilir. Yalnızca SHA-256 özeti aynı sürümdeki `SHA256SUMS.txt` ile eşleşiyorsa devam edin. Eski AudioFerry adıyla kaydedilen ayarlar otomatik taşınır.
 
